@@ -2,6 +2,12 @@ let numbers = document.querySelectorAll('.number');
 let resultValue = document.querySelector('#result-value');
 let historyValue = document.querySelector('#history-value');
 let operators = document.querySelectorAll('.operator');
+let button = document.querySelector('.button');
+
+button.addEventListener('click',function(){
+    button.classList.add('container')
+    button.classList.remove('button')
+})
 // console.log(operators);
 
 for (let i = 0; i < numbers.length; i++) {
@@ -30,6 +36,7 @@ for (let i = 0; i < operators.length; i++) {
                 let result = eval(historyOut+resultOut);
                 resultValue.innerText = result
                 historyValue.innerText = '';
+                resultValue.style.color = 'green';
             }else{
                 console.log('his')
                 let resultOut = document.querySelector('#result-value').innerText;
